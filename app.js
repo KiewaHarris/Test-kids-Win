@@ -157,3 +157,79 @@ window.onload = () => {
   renderDashboard();
   applyParentLock();
 };
+
+
+let calendarDate = new Date();
+
+function renderCalendar() {
+  const calendarEl = document.getElementById("calendar");
+  if (!calendarEl) return;
+
+  calendarEl.innerHTML = "";
+  const year = calendarDate.getFullYear();
+  const month = calendarDate.getMonth();
+  const firstDay = new Date(year, month, 1).getDay();
+  const daysInMonth = new Date(year, month + 1, 0).getDate();
+
+  for (let i = 0; i < firstDay; i++) {
+    const empty = document.createElement("div");
+    calendarEl.appendChild(empty);
+  }
+
+  for (let d = 1; d <= daysInMonth; d++) {
+    const cell = document.createElement("div");
+    cell.textContent = d;
+    cell.onclick = () => openScheduleModal(d, month, year);
+    calendarEl.appendChild(cell);
+  }
+}
+
+function prevMonth() {
+  calendarDate.setMonth(calendarDate.getMonth() - 1);
+  renderCalendar();
+}
+function nextMonth() {
+  calendarDate.setMonth(calendarDate.getMonth() + 1);
+  renderCalendar();
+}
+
+function openScheduleModal(day, month, year) {
+  if (!parentUnlocked) {
+    alert("Parent PIN required to edit schedule.");
+    return;
+  }
+  const child = children[selectedChildIndex];
+  const key = `${year}-${month + 1}-${day}`;
+  const schedule = prompt("Add schedule for this day (use emoji):", child.schedule?.[key] || "");
+  if (!child.schedule) child.schedule = {};
+  if (schedule !== null) {
+    child.schedule[key] = schedule;
+    saveAndRender();
+  }
+}
+
+function renderScheduleOnCalendar() {
+  const child = children[selectedChildIndex];
+  const calendarEl = document.getElementById("calendar");
+  if (!calendarEl || !child.schedule) return;
+
+  [...calendarEl.children].forEach(cell => {
+    const day = parseInt(cell.textContent);
+    if (!isNaN(day)) {
+      const key = `${calendarDate.getFullYear()}-${calendarDate.getMonth() + 1}-${day}`;
+      if (child.schedule[key]) {
+        const tag = document.createElement("div");
+        tag.textContent = child.schedule[key];
+        cell.appendChild(tag);
+      }
+    }
+  });
+}
+
+window.onload = () => {
+  updateChildSelect();
+  renderDashboard();
+  applyParentLock();
+  renderCalendar();
+  renderScheduleOnCalendar();
+};
