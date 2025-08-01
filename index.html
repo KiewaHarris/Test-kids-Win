@@ -3,20 +3,19 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
-  <title>Kids Win Pro – Grid UI</title>
+  <title>Kids Win Pro – Profiles & Rewards</title>
   <link rel="stylesheet" href="style.css">
 </head>
 <body>
   <h1>🎉 Kids Win Pro</h1>
   <label for="child-select">Switch Child:</label>
   <select id="child-select"></select>
-
-  <div id="pin-section">
-    <button onclick="enterPin()">🔐 Enter Parent PIN</button>
-  </div>
+  <button onclick="enterPin()">🔐 Enter Parent PIN</button>
+  <button onclick="addChild()" id="add-child-btn" style="display:none;">👶 Add New Child</button>
 
   <div id="child-dashboard">
     <p><strong>Avatar:</strong> <span id="child-avatar"></span></p>
+    <p><strong>Age:</strong> <span id="child-age"></span></p>
     <p><strong>Coins:</strong> <span id="child-coins">0</span></p>
 
     <h2>🌅 Morning Tasks</h2>
