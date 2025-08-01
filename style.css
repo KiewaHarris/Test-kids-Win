@@ -1,37 +1,41 @@
 
 body {
-  font-family: 'Segoe UI', sans-serif;
-  background-color: #fdfcff;
-  padding: 20px;
+  font-family: 'Comic Sans MS', cursive, sans-serif;
+  background-color: #fff9f0;
   color: #333;
+  padding: 20px;
 }
-h1 {
-  color: #3f51b5;
+h1, h2, h3 {
+  color: #ff6f00;
 }
 button {
-  padding: 8px 14px;
-  background-color: #3f51b5;
-  color: white;
+  padding: 16px;
+  font-size: 1.1em;
+  background-color: #ffca28;
+  color: #000;
   border: none;
-  border-radius: 6px;
-  margin: 4px 0;
+  border-radius: 10px;
+  margin: 8px;
   cursor: pointer;
-  transition: background-color 0.3s ease;
+  box-shadow: 0 2px 4px rgba(0,0,0,0.2);
 }
 button:hover {
-  background-color: #303f9f;
+  background-color: #ffd740;
 }
 ul {
   list-style-type: none;
   padding: 0;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 12px;
 }
 li {
-  background: #ffffff;
-  border-radius: 10px;
-  padding: 10px;
-  margin-bottom: 8px;
+  background-color: #ffffff;
+  border-radius: 12px;
+  padding: 14px;
   box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+  font-size: 1.1em;
 }
-#reward-section, #purchased-section {
-  margin-top: 20px;
+label, select {
+  font-size: 1.2em;
 }
