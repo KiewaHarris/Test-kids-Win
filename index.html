@@ -1,0 +1,42 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Kids Win Pro</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <h1>🎉 Kids Win Pro 🎉</h1>
+  <label for="child-select">Switch Child:</label>
+  <select id="child-select"></select>
+  <div id="child-dashboard">
+    <p><strong>Avatar:</strong> <span id="child-avatar"></span></p>
+    <p><strong>Coins:</strong> <span id="child-coins">0</span></p>
+
+    <h2>🌅 Morning Tasks</h2>
+    <ul id="morning-tasks"></ul>
+
+    <h2>🌇 Afternoon Tasks</h2>
+    <ul id="afternoon-tasks"></ul>
+
+    <h2>🌙 Evening Tasks</h2>
+    <ul id="evening-tasks"></ul>
+
+    <h2>🎁 Reward Shop</h2>
+    <div id="reward-section">
+      <h3>Available Rewards</h3>
+      <ul id="reward-list"></ul>
+    </div>
+
+    <div id="purchased-section">
+      <h3>Purchased Rewards</h3>
+      <ul id="purchased-rewards"></ul>
+    </div>
+  </div>
+
+  <button onclick="addTask()">➕ Add Task</button>
+  <button onclick="addReward()">🎁 Add Reward</button>
+  <script src="app.js"></script>
+</body>
+</html>
