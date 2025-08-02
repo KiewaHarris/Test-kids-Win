@@ -1,4 +1,8 @@
 
+body {
+  font-family: Arial, sans-serif;
+  padding: 20px;
+}
 #add-child {
   position: fixed;
   bottom: 20px;
@@ -20,4 +24,11 @@
   padding: 15px;
   border-radius: 12px;
   box-shadow: 0 4px 10px rgba(0,0,0,0.3);
+}
+.child-card {
+  border: 1px solid #ccc;
+  border-radius: 12px;
+  padding: 10px;
+  margin: 10px 0;
+  box-shadow: 2px 2px 6px rgba(0,0,0,0.1);
 }

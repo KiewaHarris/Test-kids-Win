@@ -15,3 +15,23 @@ function createChild() {
   localStorage.setItem("kidsWinChildren", JSON.stringify(children));
   location.reload();
 }
+
+function renderDashboard() {
+  const container = document.getElementById("dashboard");
+  container.innerHTML = "";
+  let children = JSON.parse(localStorage.getItem("kidsWinChildren") || "[]");
+  if (children.length === 0) {
+    container.innerHTML = "<p>No children added yet.</p>";
+    return;
+  }
+
+  children.forEach((child, index) => {
+    const card = document.createElement("div");
+    card.className = "child-card";
+    card.innerHTML = `<strong>${child.avatar} ${child.name} (Age ${child.age})</strong><br>
+                      Coins: ${child.coins}`;
+    container.appendChild(card);
+  });
+}
+
+document.addEventListener("DOMContentLoaded", renderDashboard);

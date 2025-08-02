@@ -8,18 +8,15 @@
 </head>
 <body>
   <h1>🌟 Kids Win</h1>
+  <div id="dashboard"></div>
 
-  <div id="dashboard">
-    <!-- existing UI omitted for brevity -->
-
-    <button id="add-child" onclick="toggleChildModal()">➕</button>
-    <div id="add-child-modal" style="display:none;">
-      <input id="new-name" placeholder="Name"><br>
-      <input id="new-age" placeholder="Age" type="number"><br>
-      <input id="new-emoji" placeholder="Emoji"><br>
-      <input id="new-coins" placeholder="Coins" type="number"><br>
-      <button onclick="createChild()">✅ Save</button>
-    </div>
+  <button id="add-child" onclick="toggleChildModal()">➕</button>
+  <div id="add-child-modal" style="display:none;">
+    <input id="new-name" placeholder="Name"><br>
+    <input id="new-age" placeholder="Age" type="number"><br>
+    <input id="new-emoji" placeholder="Emoji"><br>
+    <input id="new-coins" placeholder="Coins" type="number"><br>
+    <button onclick="createChild()">✅ Save</button>
   </div>
 
   <script src="app.js"></script>
