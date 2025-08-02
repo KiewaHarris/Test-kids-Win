@@ -1,52 +1,23 @@
 
-body {
-  font-family: 'Comic Sans MS', cursive;
-  background-color: #fff9f0;
-  padding: 20px;
-  font-size: 1.2em;
-}
-h1, h2 {
-  color: #ff6f00;
-}
-button {
-  padding: 14px 20px;
-  font-size: 1em;
-  margin: 6px;
-  border-radius: 8px;
-  background-color: #ffca28;
+#add-child {
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  border-radius: 50%;
+  background: #007BFF;
+  color: white;
+  font-size: 24px;
+  width: 60px;
+  height: 60px;
+  box-shadow: 0 4px 8px rgba(0,0,0,0.2);
   border: none;
-  cursor: pointer;
 }
-button:hover {
-  background-color: #ffd740;
-}
-ul {
-  list-style: none;
-  padding: 0;
-  display: grid;
-  gap: 10px;
-}
-li {
-  background-color: #fff;
-  border-radius: 8px;
-  padding: 10px;
-  box-shadow: 0 2px 4px rgba(0,0,0,0.1);
-}
-
-
-.calendar-grid {
-  display: grid;
-  grid-template-columns: repeat(7, 1fr);
-  gap: 5px;
-  margin-top: 10px;
-}
-.calendar-grid div {
-  border: 1px solid #ccc;
-  min-height: 60px;
-  padding: 5px;
-  text-align: center;
-  font-size: 0.9em;
-  background-color: #fff;
-  border-radius: 6px;
-  cursor: pointer;
+#add-child-modal {
+  position: fixed;
+  bottom: 100px;
+  right: 20px;
+  background: white;
+  padding: 15px;
+  border-radius: 12px;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.3);
 }

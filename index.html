@@ -3,45 +3,25 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
-  <title>Kids Win Pro – Profiles & Rewards</title>
+  <title>Kids Win</title>
   <link rel="stylesheet" href="style.css">
 </head>
 <body>
-  <h1>🎉 Kids Win Pro</h1>
-  <label for="child-select">Switch Child:</label>
-  <select id="child-select"></select>
-  <button onclick="enterPin()">🔐 Enter Parent PIN</button>
-  <button onclick="addChild()" id="add-child-btn" style="display:none;">👶 Add New Child</button>
+  <h1>🌟 Kids Win</h1>
 
-  <div id="child-dashboard">
-    <p><strong>Avatar:</strong> <span id="child-avatar"></span></p>
-    <p><strong>Age:</strong> <span id="child-age"></span></p>
-    <p><strong>Coins:</strong> <span id="child-coins">0</span></p>
+  <div id="dashboard">
+    <!-- existing UI omitted for brevity -->
 
-    <h2>🌅 Morning Tasks</h2>
-    <ul id="morning-tasks"></ul>
-
-    <h2>🌇 Afternoon Tasks</h2>
-    <ul id="afternoon-tasks"></ul>
-
-    <h2>🌙 Evening Tasks</h2>
-    <ul id="evening-tasks"></ul>
-
-    <h2>🎁 Available Rewards</h2>
-    <ul id="reward-list"></ul>
-
-    <h2>✅ Purchased Rewards</h2>
-    <ul id="purchased-rewards"></ul>
+    <button id="add-child" onclick="toggleChildModal()">➕</button>
+    <div id="add-child-modal" style="display:none;">
+      <input id="new-name" placeholder="Name"><br>
+      <input id="new-age" placeholder="Age" type="number"><br>
+      <input id="new-emoji" placeholder="Emoji"><br>
+      <input id="new-coins" placeholder="Coins" type="number"><br>
+      <button onclick="createChild()">✅ Save</button>
+    </div>
   </div>
-<!-- Add this below the dashboard in index.html -->
-<h2>📅 Monthly Calendar</h2>
-<div id="calendar" class="calendar-grid"></div>
-<button onclick="prevMonth()">⬅️</button>
-<button onclick="nextMonth()">➡️</button>
 
-
-  <button onclick="addTask()">➕ Add Task</button>
-  <button onclick="addReward()">🎁 Add Reward</button>
   <script src="app.js"></script>
 </body>
 </html>
